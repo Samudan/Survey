@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Данил Сироткин</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" type="text/css"
+		rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" type="text/css"
+		rel="stylesheet" />
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		.header__buttons {
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+		}
+
+		.vote-form-box-buttons {
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+		}
+
+		.vote-slider {
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+		}
+
+		.news-slider {
+			margin-left: auto;
+			margin-right: auto;
+			width: 40%;
+		}
+
+		.slick-prev:before,
+		.slick-next:before {
+			color: black;
+		}
+
+		.slider-text {
+			position: absolute;
+			bottom: 160px;
+			z-index: 2;
+			font-size: 20px;
+			color: #fff;
+			margin-left: 50px;
+		}
+
+		.hidden {
+			overflow: hidden;
+		}
+
+		.header {
+			width: 100%;
+			background: #161621;
+			padding: 15px 0;
+		}
+
+		.header__inner {
+			width: 100%;
+			max-width: 1200px;
+			padding: 0 15px;
+			margin: 0 auto;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		.header__logo p {
+			color: #fff;
+			font-size: 1.125rem;
+			text-transform: uppercase;
+		}
+
+		.header__button {
+			background: #ff9c09;
+			border: none;
+			color: #fff;
+			font: 16px 'Tahoma', sans-serif;
+			outline: none;
+			height: 45px;
+			border-radius: 3px;
+			padding: 0 30px;
+			cursor: pointer;
+			-webkit-transition: .3s;
+			transition: .3s;
+			outline: none;
+			margin-left: 15px;
+		}
+
+		.header__button:hover {
+			background: #4545b5;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+
+		.modal {
+			position: absolute;
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transition: .3s;
+			transition: .3s;
+			top: -1000px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1000;
+			background: rgba(0, 0, 0, 0.9);
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+			overflow-y: scroll;
+			padding: 60px 15px;
+		}
+
+		.modal_active {
+			position: fixed;
+			top: 0;
+			visibility: visible;
+			opacity: 1;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+
+		.modal__content {
+			width: 100%;
+			max-width: 500px;
+			padding: 50px;
+			background: #f9f9f9;
+			-webkit-box-shadow: 0 5px 15px black;
+			box-shadow: 0 5px 15px black;
+			border-radius: 3px;
+			position: relative;
+		}
+
+		.modal__close-button {
+			background: #ff0000;
+			height: 30px;
+			width: 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			border: none;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background: none;
+			cursor: pointer;
+			-webkit-transition: .3s;
+			transition: .3s;
+			outline: none;
+		}
+
+		.modal__close-button:hover {
+			-webkit-transition: .3s;
+			transition: .3s;
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+
+		.modal__title {
+			font-size: 1.8rem;
+			text-transform: uppercase;
+			margin: 0 0 15px;
+		}
+
+		.modal__description {
+			font-size: 1.125rem;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="workarea">
+		<h1 id="pagetitle">Данил Сироткин</h1>
+		<div class="news-slider slider">
+
+			<a class="slider-item"
+				href="https://www.greenatom.ru/services/it-services/sobstvennye-razrabotki-i-produkty/"
+				id="bx_651765591_49" target="_blank">
+				<img src="https://www.greenatom.ru/upload/iblock/8fd/greenatom_banner_mobile_01.jpg" alt="3">
+				<div class="slider-text">
+					<p style="color:#0665a4; text-decoration: none;">Разработка <br>ИТ-решений</p>
+				</div>
+			</a>
+
+			<a class="slider-item" href="https://www.greenatom.ru/" id="bx_651765591_48" target="_blank">
+				<img src="https://www.greenatom.ru/upload/iblock/3cd/greenatom_banner_mobile_03.jpg" alt="2">
+				<div class="slider-text">
+					ИТ-интегратор<br> Госкорпорации <br> «Росатом» </div>
+			</a>
+
+			<a class="slider-item" href="https://www.greenatom.ru/" id="bx_651765591_47" target="_blank">
+				<img src="https://www.greenatom.ru/upload/iblock/5d9/greenatom_banner_mobile_04.jpg" alt="1">
+				<div class="slider-text">
+					Многофункциональный <br>
+					общий центр обслуживания <br>
+					атомной отрасли
+				</div>
+			</a>
+
+		</div>
+
+		<br>
+		<br>
+		<!--'start_frame_cache_vote699'-->
+		<div id="voting_current_6704_form">
+			<div class="voting-form-box">
+				<form method="post" class="vote-form">
+					<ol class="vote-items-list vote-question-list">
+						<div class="vote-slider slider">
+							<li class="vote-item-vote vote-item-vote-first vote-item-vote-odd ">
+								<div class="vote-item-header">
+									<div class="vote-item-title vote-item-question">1. К какой отрасли относится
+										Гринатом?<span class='starrequired'>*</span></div>
+									<div class="vote-clear-float"></div>
+								</div>
+								<ol class="vote-items-list vote-answers-list">
+									<li class="vote-item-vote vote-item-vote-first vote-item-vote-odd ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_1" id="vote_radio_1_1" value="1" />
+											<label for="vote_radio_1_1">металлургическая отрасль</label>
+										</span>
+									</li>
+									<li class="vote-item-vote vote-item-vote-even ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_1" id="vote_radio_1_2" value="2" />
+											<label for="vote_radio_1_2">легкая промышленность</label>
+										</span>
+									</li>
+									<li class="vote-item-vote vote-item-vote-last vote-item-vote-odd ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_1" id="vote_radio_1_3" value="3" />
+											<label for="vote_radio_1_3">атомная отрасль</label>
+										</span>
+									</li>
+								</ol>
+							</li>
+							<li class="vote-item-vote vote-item-vote-even ">
+								<div class="vote-item-header">
+									<div class="vote-item-title vote-item-question">2. Гринатом является</div>
+									<div class="vote-clear-float"></div>
+								</div>
+								<ol class="vote-items-list vote-answers-list">
+									<li class="vote-item-vote vote-item-vote-first vote-item-vote-odd ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_2" id="vote_radio_2_4" value="4" />
+											<label for="vote_radio_2_4">ИТ-интегратор госкорпорации Росатом</label>
+										</span>
+									</li>
+									<li class="vote-item-vote vote-item-vote-last vote-item-vote-even ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_2" id="vote_radio_2_5" value="5" />
+											<label for="vote_radio_2_5">сервисная компания</label>
+										</span>
+									</li>
+								</ol>
+							</li>
+							<li class="vote-item-vote vote-item-vote-last vote-item-vote-odd ">
+
+								<div class="vote-item-header">
+
+									<div class="vote-item-title vote-item-question">Масштаб компании</div>
+									<div class="vote-clear-float"></div>
+								</div>
+
+								<ol class="vote-items-list vote-answers-list">
+									<li class="vote-item-vote vote-item-vote-first vote-item-vote-odd ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_3" id="vote_radio_3_6" value="6" />
+											<label for="vote_radio_3_6">32 города и 5000 сотрудников</label>
+										</span>
+									</li>
+									<li class="vote-item-vote vote-item-vote-even ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_3" id="vote_radio_3_7" value="7" />
+											<label for="vote_radio_3_7">10 городов и 1600 сотрудников</label>
+										</span>
+									</li>
+									<li class="vote-item-vote vote-item-vote-last vote-item-vote-odd ">
+										<span class="vote-answer-item vote-answer-item-radio">
+											<input type="radio" name="vote_radio_3" id="vote_radio_3_8" value="8" />
+											<label for="vote_radio_3_8">45 городов и 7000 сотрудников</label>
+										</span>
+									</li>
+								</ol>
+							</li>
+						</div>
+					</ol>
+				</form>
+				<div class="header__buttons">
+					<button id="callback-button" class="header__button">Голосовать</button>
+				</div>
+			</div>
+		</div><br>
+	</div>
+
+	<!-- Модальное окно -->
+	<div class="modal" id="modal-1">
+		<div class="modal__content">
+			<button class="modal__close-button"><img src="./img/close.svg" width="12" alt=""></button>
+			<!-- Контент модального окна -->
+			<h1 class="modal__title">Опрос</h1>
+			<p class="modal__description">Вы прошли тест</p>
+		</div>
+	</div>
+
+
+</body>
+<footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$('.news-slider').slick({
+				dots: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			$('.vote-slider').slick({
+				dots: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			$('#callback-button').click(function () {
+				$('.modal').addClass('modal_active');
+				$('body').addClass('hidden');
+			});
+
+			$('.modal__close-button').click(function () {
+				$('.modal').removeClass('modal_active');
+				$('body').removeClass('hidden');
+			});
+
+			$('.modal').mouseup(function (e) {
+				let modalContent = $(".modal__content");
+				if (!modalContent.is(e.target) && modalContent.has(e.target).length === 0) {
+					$(this).removeClass('modal_active');
+					$('body').removeClass('hidden');
+				}
+			});
+		});
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+</footer>
+
+</html>
